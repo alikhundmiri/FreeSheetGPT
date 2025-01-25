@@ -1,4 +1,4 @@
-# SheetGPT
+# FreeSheetGPT
 
 Use ChatGPT directly in your Google Sheets! Ask questions, analyze data, or get AI assistance right from your spreadsheet cells.
 
