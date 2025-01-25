@@ -33,30 +33,30 @@ Use ChatGPT directly in your Google Sheets! Ask questions, analyze data, or get 
 
 ### Step 5: Add Your OpenAI Key
 1. Go back to your Google Sheet
-2. You'll see a new menu item called `SheetGPT`
-3. Click `SheetGPT` > `Set Secret Key`
+2. You'll see a new menu item called `FreeSheetGPT`
+3. Click `FreeSheetGPT` > `Set Secret Key`
 4. Paste your OpenAI API key from Step 1
 5. Click "OK"
 
 ### Step 6: Start Using SheetGPT! 🎉
 Type in any cell:
 ```
-=SheetGPT("your question here")
+=FreeSheetGPT("your question here")
 ```
 
 Examples:
-- `=SheetGPT("Summarize this data", A2)`
-- `=SheetGPT("Translate this to Spanish", A2)`
-- `=SheetGPT("What insights can you give me about these numbers?", A2:B40)`
+- `=FreeSheetGPT("Summarize this data", A2)`
+- `=FreeSheetGPT("Translate this to Spanish", A2)`
+- `=FreeSheetGPT("What insights can you give me about these numbers?", A2:B40)`
 
 ## Tips
-- The formula can reference other cells: `=SheetGPT(A1)`
-- You can select multiple cells: `=SheetGPT(A1:B10)`
+- The formula can reference other cells: `=FreeSheetGPT(A1)`
+- You can select multiple cells: `=FreeSheetGPT(A1:B10)`
 - Each query uses your OpenAI API credits
 - Responses are cached in the cell until you refresh
 
 ## Troubleshooting
-- If you see `#NO_API_KEY`, go to `SheetGPT > Set Secret Key` to add your API key
+- If you see `#NO_API_KEY`, go to `FreeSheetGPT > Set Secret Key` to add your API key
 - If you see `#NO_INPUT`, make sure you've provided some text or cell reference
 - If the menu doesn't appear, refresh the page
 
@@ -71,9 +71,8 @@ This formula is free and open source. I could have made it a paid product. but i
 
 also, I believe AI will be more and more commoditized in coming days. 
 
-so, since this is a generalised, tool you should be able to enter in your own API keys and use it on your dime.
-
-feel free to fork this repo and make your own version of it. 
+So, since this is a generalised, tool you should be able to enter in your own API keys and use it on your dime.
 
 Cheers!
+
 Ali Khundmiri

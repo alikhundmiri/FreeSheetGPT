@@ -1,7 +1,7 @@
 // this is a google apps script
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('SheetGPT')
+  ui.createMenu('FreeSheetGPT')
       .addItem('Set Secret Key', 'set_openai_secret_key')
     .addToUi();
 }
@@ -53,8 +53,8 @@ function set_openai_secret_key() {
  * @return {string} The GPT response
  * @customfunction
  */
-function SheetGPT(input) {
-  console.log("SheetGPT called with input:", input);
+function FreeSheetGPT(input) {
+    console.log("FreeSheetGPT called with input:", input);
   
   // Input validation
   if (!input || (typeof input === 'string' && input.trim() === '') || 
@@ -67,7 +67,7 @@ function SheetGPT(input) {
   const apiKey = PropertiesService.getScriptProperties().getProperty("openai_secret_key");
   if (!apiKey) {
     console.error("API key not found in DocumentProperties");
-    return "#NO_API_KEY. Please click on 'SheetGPT'>'Setup OpenAI' to set your API key.";
+    return "#NO_API_KEY. Please click on 'FreeSheetGPT'>'Setup OpenAI' to set your API key.";
   }
   console.log("API key found, making request to OpenAI");
 
@@ -119,9 +119,8 @@ function SheetGPT(input) {
     console.log("Successfully processed response:", result);
     return result;
   } catch (error) {
-    console.error("Error in SheetGPT:", error.toString());
+      console.error("Error in FreeSheetGPT:", error.toString());
     console.error("Full error object:", JSON.stringify(error));
     return "Error: " + error.toString();
   }
 }
-
