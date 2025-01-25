@@ -1,7 +1,7 @@
 // this is a google apps script
 function onOpen() {
   var ui = SpreadsheetApp.getUi();
-  ui.createMenu('Setup OpenAI')
+  ui.createMenu('SheetGPT')
       .addItem('Set Secret Key', 'set_openai_secret_key')
     .addToUi();
 }
@@ -60,14 +60,14 @@ function SheetGPT(input) {
   if (!input || (typeof input === 'string' && input.trim() === '') || 
       (Array.isArray(input) && input.flat().join('').trim() === '')) {
     console.log("Empty input received, skipping API call");
-    return "#NOINPUT";
+    return "#NO_INPUT";
   }
   
   // Get the API key
   const apiKey = PropertiesService.getScriptProperties().getProperty("openai_secret_key");
   if (!apiKey) {
     console.error("API key not found in DocumentProperties");
-    return "Error: OpenAI API key not set. Please use 'Setup OpenAI' menu to set your API key.";
+    return "#NO_API_KEY. Please click on 'SheetGPT'>'Setup OpenAI' to set your API key.";
   }
   console.log("API key found, making request to OpenAI");
 
